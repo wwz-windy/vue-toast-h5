@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="../node_modules/vue/dist/vue.js"></script>
+		<script src="../dist/index.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body>
+		<div id="app">
+			<a href="javascript:;" @click="toast">click</a>	
+		</div>
+		<script type="text/javascript">
+			new Vue({
+				el: '#app',
+				methods: {
+					toast: function(){
+						this.$toast.show('message', {closed: ()=>{
+							this.$toast.info('info message');
+						}})
+//						let vm = this;
+//						vm.$toast.show('show',{duration: 3000, closed:function(){
+//							vm.$toast.error('error',{duration: 3000, closed:function(){
+//								vm.$toast.info('info',{duration: 3000, closed:function(){
+//									vm.$toast.warn('warn',{duration: 3000, closed:function(){
+//										console.log('is closed.');
+//									}});
+//								}});
+//							}});
+//						}});
+					}
+				}
+			})
+		</script>
+	</body>
+</html>
